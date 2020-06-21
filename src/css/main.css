@@ -26,5 +26,64 @@ body {
 }
 
 .App {
+  min-height: 100vh;
+  background: radial-gradient(at top, var(--radial-gradient-start), var(--radial-gradient-end));
+}
 
+.rulesWrapper {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  background: rgba(0,0,0,0.3);
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.rulesBackground {
+  width: 400px;
+  height: 460px;
+  background-color: white;
+  padding: 30px 30px 45px 30px;
+  border-radius: 10px;
+}
+
+.rulesHeader {
+  font-size: 34px;
+  padding-bottom: 15px;
+  color: var(--dark-text);
+}
+
+.rulesImage {
+
+}
+
+.closeIcon {
+  position: relative;
+  top: -375px;
+  left: 310px;
+}
+
+.closeIcon:hover {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+
+.openModalWrapper {
+  position: absolute;
+  bottom: 40px;
+  right: 30px;
+  border-radius: 10px;
+  border: solid 2px var(--header-outline);
+  padding:10px 35px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing:1.5px;
+  color: white;
+}
+
+.openModalWrapper:hover {
+  background: white;
+  color: var(--dark-text);
 }
