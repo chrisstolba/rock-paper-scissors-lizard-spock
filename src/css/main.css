@@ -8,8 +8,8 @@
   --rock-gradient-end: hsl(349, 70%, 56%);
   --lizard-gradient-start: hsl(261, 73%, 60%);
   --lizard-gradient-end: hsl(261, 72%, 63%);
-  --cyan-gradient-start: hsl(189, 59%, 53%);
-  --cyan-gradient-end: hsl(189, 58%, 57%);
+  --spock-gradient-start: hsl(189, 59%, 53%);
+  --spock-gradient-end: hsl(189, 58%, 57%);
 
   /* Neutral Colors */
   --dark-text: hsl(229, 25%, 31%);
@@ -31,11 +31,12 @@ body {
 }
 
 .rulesWrapper {
+  z-index: 999;
   position: absolute;
   height: 100vh;
   width: 100vw;
   display: grid;
-  background: rgba(0,0,0,0.3);
+  background: rgba(0,0,0,0.7);
   display: grid;
   justify-content: center;
   align-content: center;
@@ -55,10 +56,6 @@ body {
   color: var(--dark-text);
 }
 
-.rulesImage {
-
-}
-
 .closeIcon {
   position: relative;
   top: -375px;
@@ -72,18 +69,179 @@ body {
 
 .openModalWrapper {
   position: absolute;
-  bottom: 40px;
-  right: 30px;
+  bottom: 35px;
+  right: 35px;
   border-radius: 10px;
   border: solid 2px var(--header-outline);
-  padding:10px 35px;
+  padding:10px 38px;
   text-align: center;
-  font-size: 18px;
-  letter-spacing:1.5px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing:2.2px;
   color: white;
 }
 
 .openModalWrapper:hover {
   background: white;
   color: var(--dark-text);
+}
+
+.gameBoardWrapper {
+  display: grid;
+  justify-content: center;
+  padding-top: 45px;
+}
+
+.gameLogo {
+  margin-top:3px;
+}
+
+.gameBoardHeader {
+  height: 155px;
+  width: 700px;
+  border: solid 3px var(--header-outline);
+  border-radius: 15px;
+  padding: 17px 22px 15px 28px;
+}
+
+.scoreWrapper {
+  float: right;
+  background-color: white;
+  border-radius: 10px;
+  height: 115px;
+  width: 150px;
+  text-align: center;
+}
+
+.scoreText {
+  color: var(--score-text);
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 15px 0 0 0;
+}
+
+.scoreNumber {
+  color: var(--dark-text);
+  font-size: 50px;
+}
+
+.userPickWrapper {
+  background-image: url(../images/bg-pentagon.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 550px;
+
+
+}
+
+.scissorsWrapper, .paperWrapper, .spockWrapper, .lizardWrapper, .rockWrapper {
+  z-index: 0;
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+  background-color: white;
+  display:grid;
+  justify-content:center;
+  align-content: center;
+  box-shadow: inset 0 -7px rgba(0,0,0,0.3), 3px 0 rgba(0,0,0,0.3), -3px 0 rgba(0,0,0,0.3), 0 3px rgba(0,0,0,0.3), 0 -3px rgba(0,0,0,0.3);
+}
+
+.innerCircle {
+  width: 104px;
+  height: 104px;
+  border-radius: 52px;
+  background-color: white;
+  display:grid;
+  justify-content:center;
+  align-content: center;
+  box-shadow: inset 0 5px rgba(0,0,0,0.2);
+}
+
+.scissorsWrapper {
+  position: relative;
+  top: 40px;
+  left: 275px;
+  background: radial-gradient(at top, var(--scissors-gradient-start), var(--scissors-gradient-end));
+}
+
+.paperWrapper {
+  position: relative;
+  top: 30px;
+  left: 440px;
+  background: radial-gradient(at top, var(--paper-gradient-start), var(--paper-gradient-end));
+}
+
+.spockWrapper {
+  position: relative;
+  top: -105px;
+  left: 110px;
+  background: radial-gradient(at top, var(--spock-gradient-start), var(--spock-gradient-end));
+}
+
+.lizardWrapper {
+  position: relative;
+  top: -60px;
+  left: 180px;
+  background: radial-gradient(at top, var(--lizard-gradient-start), var(--lizard-gradient-end));
+}
+
+.rockWrapper {
+  position: relative;
+  top: -200px;
+  left: 380px;
+  background: radial-gradient(at top, var(--rock-gradient-start), var(--rock-gradient-end));
+}
+
+.compWaitWrapper, .compPickWrapper {
+  width: 700px;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.userPickContainer, .compPickContainer, .compWaitContainer {
+  display: grid;
+  width: 350px;
+  justify-content: center;
+}
+
+.userPickText, .compPickText {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 2px;
+  color: white;
+  margin: 75px 0 70px 0;
+  letter-spacing: 2.6px;
+}
+
+.userPickOutterCircle, .compPickOutterCircle {
+  height: 300px;
+  width: 300px;
+  border-radius: 150px;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  box-shadow: inset 0 -12px rgba(0,0,0,0.2);
+}
+
+.userPickInnerCircle, .compPickInnerCircle {
+  height: 220px;
+  width: 220px;
+  border-radius: 110px;
+  background-color: white;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  box-shadow: inset 0 12px rgba(0,0,0,0.2);
+}
+
+.compWaitInnerCircle {
+  height: 220px;
+  width: 220px;
+  border-radius: 110px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.userPickIcon, .compPickIcon {
+  transform: scale(2.0);
 }
