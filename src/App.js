@@ -16,8 +16,8 @@ let App = () => {
   return (
     <div className="App">
       <Modal hidden={showRules ? false : true} closeRules={closeRules} />
-      <OpenModal openRules={openRules} />
       <GameBoard />
+      <OpenModal openRules={openRules} />
     </div>
   );
 };
