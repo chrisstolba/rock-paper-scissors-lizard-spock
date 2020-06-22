@@ -95,7 +95,7 @@ let WinLoss = ({ userPick, compPick, winner, updateGameState }) => {
           </div>
         </div>
       </div>
-      <div className="winLossWrapper">
+      <div className="winLossResultWrapper">
         <p className="winLossText">
           {winner === "draw"
             ? "DRAW"
@@ -103,9 +103,9 @@ let WinLoss = ({ userPick, compPick, winner, updateGameState }) => {
             ? "YOU WIN"
             : "YOU LOSE"}
         </p>
-        <div className="playAgainContainer">
-          <p className="playAgainText">PLAY AGAIN</p>
-        </div>
+        <p className="playAgainText" onClick={updateGameState}>
+          PLAY AGAIN
+        </p>
       </div>
       <div className="compPickContainer">
         <p className="compPickText">THE HOUSE PICKED</p>

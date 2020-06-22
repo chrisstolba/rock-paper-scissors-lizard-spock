@@ -87,9 +87,9 @@ let CompPick = ({ userPick, compPick, updateGameState }) => {
   }
 
   useEffect(() => {
-    let timer = setTimeout(() => updateGameState(), 2000);
+    let timer = setTimeout(() => updateGameState(), 1000);
     return () => clearTimeout(timer);
-  }, []);
+  }, [updateGameState]);
 
   return (
     <div className="compPickWrapper">
